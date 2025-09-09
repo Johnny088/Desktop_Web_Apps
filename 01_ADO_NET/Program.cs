@@ -17,7 +17,6 @@ namespace _01_ADO_NET
             //// DbDataReader
             SqlDataReader reader = command.ExecuteReader();
 
-            Console.OutputEncoding = Encoding.UTF8;
 
             //// відображається назви всіх колонок таблиці
             for (int i = 0; i < reader.FieldCount; i++)
@@ -51,7 +50,6 @@ namespace _01_ADO_NET
             //// DbDataReader
             SqlDataReader reader = command.ExecuteReader();
 
-            Console.OutputEncoding = Encoding.UTF8;
 
             //// відображається назви всіх колонок таблиці
             for (int i = 0; i < reader.FieldCount; i++)
@@ -84,7 +82,6 @@ namespace _01_ADO_NET
             //// DbDataReader
             SqlDataReader reader = command.ExecuteReader();
 
-            Console.OutputEncoding = Encoding.UTF8;
 
             //// відображається назви всіх колонок таблиці
             for (int i = 0; i < reader.FieldCount; i++)
@@ -117,7 +114,6 @@ namespace _01_ADO_NET
             //// DbDataReader
             SqlDataReader reader = command.ExecuteReader();
 
-            Console.OutputEncoding = Encoding.UTF8;
 
             //// відображається назви всіх колонок таблиці
             for (int i = 0; i < reader.FieldCount; i++)
@@ -140,6 +136,7 @@ namespace _01_ADO_NET
             reader.Close();
         }
 
+
         static void ShowMinSalesPrice(SqlConnection sqlConnection)
         {
             string cmdText = $@"select * from Salles as s join Products as p on p.Id = s.ProductId
@@ -151,7 +148,7 @@ namespace _01_ADO_NET
             //// DbDataReader
             SqlDataReader reader = command.ExecuteReader();
 
-            Console.OutputEncoding = Encoding.UTF8;
+           
 
             //// відображається назви всіх колонок таблиці
             for (int i = 0; i < reader.FieldCount; i++)
@@ -185,7 +182,7 @@ namespace _01_ADO_NET
             //// DbDataReader
             SqlDataReader reader = command.ExecuteReader();
 
-            Console.OutputEncoding = Encoding.UTF8;
+
 
             //// відображається назви всіх колонок таблиці
             for (int i = 0; i < reader.FieldCount; i++)
@@ -207,8 +204,150 @@ namespace _01_ADO_NET
 
             reader.Close();
         }
+        static void FirstClientPurchase(SqlConnection sqlConnection, string Fullname)
+        {
+
+            string cmdText = $@"select top 1 *
+                            from Salles as s join Clients as c on c.Id = s.ClientId
+                            where c.FullName = '{Fullname}'                                               
+                            order by s.DateSalles";                                         
+
+            SqlCommand command = new SqlCommand(cmdText, sqlConnection);
+
+            //// ExecuteReader - виконує команду select та повертає результат у вигляді
+            //// DbDataReader
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            //// відображається назви всіх колонок таблиці
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                Console.Write($" {reader.GetName(i),14}");
+            }
+            Console.WriteLine("\n---------------------------------------------------------------------------------------------------------------------");
+
+            //////// відображаємо всі значення кожного рядка
+            while (reader.Read())
+            {
+
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    Console.Write($" {reader[i],14} ");
+                }
+                Console.WriteLine();
+            }
+
+            reader.Close();
+        }
+        static void SQL_Menu(SqlConnection sqlConnection)
+        {
+            string message = "Push any button, to continue.....";
+            bool flag = true;
+            while (flag)
+            {
+
+                Console.Clear();
+
+                printC("");
+                Console.WriteLine("1. Show Customers");
+                Console.WriteLine("2. Show Sellers");
+                Console.WriteLine("3. Show Sales by Customer Name");
+                Console.WriteLine("4. Show Sales with Price Filter");
+                Console.WriteLine("5. Show Minimum Sale Price");
+                Console.WriteLine("6. Show Maximum Sale Price");
+                Console.WriteLine("7. Show First Purchase of a Customer");
+                Console.WriteLine("0. Exit");
+                Console.Write("Type your choice: ");
+                int Key = int.Parse(Console.ReadLine());
+                printY("");
+                switch (Key)
+                {
+                    case 1:
+                        ShowCastomers(sqlConnection);
+                        printG(message);
+                        Console.ReadKey();
+                        break;
+                    case 2:
+                        ShowSellers(sqlConnection);
+                        printG(message);
+                        Console.ReadKey();
+                        break;
+                    case 3:
+                        ShowSallesByName(sqlConnection);
+                        printG(message);
+                        Console.ReadKey();
+                        break;
+                    case 4:
+                        ShowFilterPrice(sqlConnection);
+                        printG(message);
+                        Console.ReadKey();
+                        break;
+                    case 5:
+                        ShowMinSalesPrice(sqlConnection);
+                        printG(message);
+                        Console.ReadKey();
+                        break;
+                    case 6:
+                        ShowMaxSalesPrice(sqlConnection);
+                        printG(message);
+                        Console.ReadKey();
+                        break;
+                    case 7:
+                        Console.Write("Enter full name of the customer: ");
+                        string fullName = Console.ReadLine();
+                        FirstClientPurchase(sqlConnection, fullName);
+                        printG(message);
+                        Console.ReadKey();
+                        break;
+                    case 0:
+                        flag = false;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        #region print
+
+        static public void printR<type>(type message)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+        }
+        static public void printC<type>(type message)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(message);
+        }
+        static public void printDC<type>(type message)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine(message);
+        }
+        static public void printY<type>(type message)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(message);
+        }
+        static public void printG<type>(type message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(message);
+        }
+        static public void printDY<type>(type message)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write(message);
+        }
+        static public void reset()
+        {
+            Console.ResetColor();
+        }
+        #endregion
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             //connectionString : Property = value;property2 = value;
             /* SQL Server:
               - Windows Authentication:    "Data Source=server_name;
@@ -220,7 +359,7 @@ namespace _01_ADO_NET
           */
             //connectionString:  Property=value;Property2=value2;
             string connectionString = @"Data Source = MIAMI\SQLEXPRESS; 
-                                        Initial Catalog = SportShop;
+                                        Initial Catalog = SportShop;                      
                                         Integrated Security = true; TrustServerCertificate=True;
 ";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -287,20 +426,11 @@ namespace _01_ADO_NET
             //reader.Close();
 
             #endregion
-            ShowCastomers(sqlConnection);
-            Console.WriteLine("----------------------------------------------");
-            ShowSellers(sqlConnection);
-            Console.WriteLine("----------------------------------------------");
+           
+            //FirstClientPurchase(sqlConnection, "Романчук Людмила Степанівна");
+            SQL_Menu(sqlConnection);
 
-            ShowSallesByName(sqlConnection);
-            Console.WriteLine("----------------------------------------------");
-            ShowFilterPrice(sqlConnection);
-            Console.WriteLine("--------------------min--------------------------");
-            ShowMinSalesPrice(sqlConnection);
-            Console.WriteLine("--------------------max--------------------------");
-            ShowMaxSalesPrice(sqlConnection);
-            Console.WriteLine("--------------------max--------------------------");
-
+            
             sqlConnection.Close();
 
         }
