@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_ADO_NET", "01_ADO_NET\01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEst", "TEst\TEst.csproj", "{8AFD1051-DA1C-412B-A05F-8032252744A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Ado_NET_Sales", "02_Ado_NET_Sales\02_Ado_NET_Sales.csproj", "{EA670C89-5EA6-4102-B4D3-AEDD64402672}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8AFD1051-DA1C-412B-A05F-8032252744A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AFD1051-DA1C-412B-A05F-8032252744A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AFD1051-DA1C-412B-A05F-8032252744A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA670C89-5EA6-4102-B4D3-AEDD64402672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA670C89-5EA6-4102-B4D3-AEDD64402672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA670C89-5EA6-4102-B4D3-AEDD64402672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA670C89-5EA6-4102-B4D3-AEDD64402672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
