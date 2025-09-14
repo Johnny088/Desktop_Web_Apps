@@ -91,18 +91,18 @@ namespace _02_ADO_NET_Desctop
             SqlDataReader reader = command.ExecuteReader();
             GetByQuery(reader);
         }
-        public void LastPurchaseClient(string fullName)
+        public void Test(string fullName)
         {
             //items.Clear();
             string CmdText = $@"select top 1 p.Name as Product, s.Price, c.FullName, s.DateSalles
                                 from Salles as s join Clients as c on c.id = s.ClientId
 				                                 join Products as p on p.id = s.ProductId
-                                                 where c.FullName = '{fullName}'
+                                                 where c.FullName = '{fullName}' 
                                                  order by s.DateSalles";
 
             SqlCommand command = new SqlCommand(CmdText, sqlConnection);
-            command.Parameters.Add("fullName", System.Data.SqlDbType.NVarChar).Value = fullName;  //protecting from SQL injection, need to check the variable and convert it to
-                                                                                                                //NvarChar to avid dangerous scripts
+            //command.Parameters.Add("fullName", System.Data.SqlDbType.NVarChar).Value = fullName;  //protecting from SQL injection, need to check the variable and convert it to
+            //NvarChar to avid dangerous scripts
 
             //the second version
 
@@ -132,10 +132,45 @@ namespace _02_ADO_NET_Desctop
             }
 
         }
-
-        private object Add(string v, SqlDbType nVarChar)
+        public void LastPurchaseClient(string GottenName)
         {
-            throw new NotImplementedException();
+            //items.Clear();
+            string CmdText = $@"select top 1 p.Name as Product, s.Price, c.FullName, s.DateSalles
+                                from Salles as s join Clients as c on c.id = s.ClientId
+				                                 join Products as p on p.id = s.ProductId
+                                                 where c.FullName = @fullName order by s.DateSalles";
+
+            SqlCommand command = new SqlCommand(CmdText, sqlConnection);
+            command.Parameters.Add("fullName", System.Data.SqlDbType.NVarChar).Value = GottenName;  //protecting from SQL injection, need to check the variable and convert it to
+                                                                                                                //NvarChar to avid dangerous scripts
+
+            //the second version
+
+            //SqlParameter parameter = new SqlParameter();                                //why does not work???
+            //{
+            //    ParameterName = "fullName";
+            //    SqlDbType = System.Data.SqlDbType.NVarChar;
+            //    Value = fullName;
+            //}
+
+            SqlDataReader reader = command.ExecuteReader();
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                Console.Write($" {reader.GetName(i),14}");
+            }
+            Console.WriteLine("\n--------------------------");
+
+            //////// відображаємо всі значення кожного рядка
+            while (reader.Read())
+            {
+
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    Console.Write($" {reader[i],14} ");
+                }
+                Console.WriteLine();
+            }
+
         }
 
         public void TopSeller()
@@ -266,6 +301,7 @@ namespace _02_ADO_NET_Desctop
                 items.ShowItems();
                 //items.LastPurchaseClient("Романчук Людмила Степанівна';create table Hacked(id int);--");  // doesn't work even without protection, it must be because of Order by
                 items.LastPurchaseClient("Романчук Людмила Степанівна");
+                //items.Test("Романчук Людмила Степанівна';create table Hacked(Id int);--");
             }
 
             
