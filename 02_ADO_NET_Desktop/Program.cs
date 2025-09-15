@@ -1,6 +1,7 @@
 ﻿using _03_data_access.models;
 using Microsoft.IdentityModel.Protocols;
 using System.Configuration;
+using System.Text;
 
 namespace _02_ADO_NET_Desktop
 {
@@ -12,7 +13,7 @@ namespace _02_ADO_NET_Desktop
     {
         static void Main(string[] args)
         {
-            //Console.OutputEncoding = Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
             //string connectionString = @"Data Source = MIAMI\SQLEXPRESS;   
             //                            Initial Catalog = SportShop; 
             //                            Integrated Security = True;
