@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02_ADO_NET_Desktop
+namespace _03_data_access.models
 {
-    internal class SallesItems
+    public class SallesItems
     {
         public int Id { get; set; }
         public int ProductID { get; set; }
