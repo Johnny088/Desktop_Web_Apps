@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_SportShopUI", "03_SportS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_data_access", "03_data_access\03_data_access.csproj", "{50A5535B-BEE7-4FE6-930D-7141B3E12294}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToObject", "LinqToObject\LinqToObject.csproj", "{37552AE0-BCC3-459F-AA06-43A08C786DFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{50A5535B-BEE7-4FE6-930D-7141B3E12294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50A5535B-BEE7-4FE6-930D-7141B3E12294}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50A5535B-BEE7-4FE6-930D-7141B3E12294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37552AE0-BCC3-459F-AA06-43A08C786DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37552AE0-BCC3-459F-AA06-43A08C786DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37552AE0-BCC3-459F-AA06-43A08C786DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37552AE0-BCC3-459F-AA06-43A08C786DFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
