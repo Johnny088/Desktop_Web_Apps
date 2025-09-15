@@ -1,4 +1,4 @@
-﻿using _02_ADO_NET_Desktop;
+﻿
 using _03_data_access.models;
 using System.Configuration;
 using System.Text;
@@ -47,8 +47,8 @@ namespace _03_SportShopUI
 
         private void Button_click(object sender, RoutedEventArgs e)
         {
-            //dataGrid.Items.Clear(); doesn't work
-            dataGrid.ItemsSource = null;
+            //dataGrid.Items.Clear();     //doesn't work and breaks the program
+            dataGrid.ItemsSource = null; // doesn't work
             dataGrid.ItemsSource = db.ReadAll();
         }
 

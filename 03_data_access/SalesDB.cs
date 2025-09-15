@@ -1,7 +1,7 @@
 ﻿ using _03_data_access.models;
 using Microsoft.Data.SqlClient;
 
-namespace _02_ADO_NET_Desktop
+namespace _03_data_access.models
 {
     public class SalesDB : IDisposable
     {
@@ -96,6 +96,7 @@ namespace _02_ADO_NET_Desktop
 
         public List<SallesItems> ReadAll()
         {
+            items.Clear();
             string CmdText = @"select * from Salles";
             SqlCommand command = new SqlCommand(CmdText, sqlConnection);
             SqlDataReader reader = command.ExecuteReader();
@@ -131,11 +132,11 @@ namespace _02_ADO_NET_Desktop
             string CmdText = $@"select top 1 p.Name as Product, s.Price, c.FullName, s.DateSalles
                                 from Salles as s join Clients as c on c.id = s.ClientId
 				                                 join Products as p on p.id = s.ProductId
-                                                 where c.FullName = '{fullName}' 
+                                                 where c.FullName = '{fullName}'
                                                  order by s.DateSalles";
 
             SqlCommand command = new SqlCommand(CmdText, sqlConnection);
-            //command.Parameters.Add("fullName", System.Data.SqlDbType.NVarChar).Value = fullName;  //protecting from SQL injection, need to check the variable and convert it to
+            command.Parameters.Add("fullName", System.Data.SqlDbType.NVarChar).Value = fullName;  //protecting from SQL injection, need to check the variable and convert it to
             //NvarChar to avoid dangerous scripts
 
             SqlDataReader reader = command.ExecuteReader();
@@ -154,16 +155,16 @@ namespace _02_ADO_NET_Desktop
 
             SqlCommand command = new SqlCommand(CmdText, sqlConnection);
             command.Parameters.Add("fullName", System.Data.SqlDbType.NVarChar).Value = GottenName;  //protecting from SQL injection, need to check the variable and convert it to
-                                                                                                    //NvarChar to avid dangerous scripts
+            //NvarChar to avid dangerous scripts
 
             //the second version
 
-            //SqlParameter parameter = new SqlParameter();                                //why does not work???
+            //SqlParameter parameter = new SqlParameter()                               //why does not work???
             //{
-            //    ParameterName = "fullName";
-            //    SqlDbType = System.Data.SqlDbType.NVarChar;
-            //    Value = fullName;
-            //}
+            //    ParameterName = "fullName",
+            //    SqlDbType = System.Data.SqlDbType.NVarChar,
+            //    Value = GottenName
+            //};
 
             SqlDataReader reader = command.ExecuteReader();
             return ReadFromDatabase(reader);
