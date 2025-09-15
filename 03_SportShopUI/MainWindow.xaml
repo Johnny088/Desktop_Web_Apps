@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:_03_SportShopUI"
         mc:Ignorable="d"
         Title="FirstWindow" Height="450" Width="800">
+       
     <DockPanel>
+        
+            
         <ToolBar DockPanel.Dock="Top">
             <Button Click="Button_click" Margin="5 0">
                 Load all Salles
@@ -19,7 +22,13 @@
             </Button>
             
         </ToolBar>
-        <DataGrid Name="dataGrid"></DataGrid>
+        <DataGrid Name="dataGrid">
+            <DataGrid.Background>
+                <ImageBrush
+        ImageSource="/images/clothes.jpg"
+        Stretch="UniformToFill"/>
+            </DataGrid.Background>
+        </DataGrid>
     </DockPanel>
 
 </Window>

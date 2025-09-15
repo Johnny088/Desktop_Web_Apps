@@ -10,7 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\clothes.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\03_data_access\03_data_access.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\clothes.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
