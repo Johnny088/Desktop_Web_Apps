@@ -47,7 +47,8 @@ namespace _03_SportShopUI
 
         private void Button_click(object sender, RoutedEventArgs e)
         {
-            
+            //dataGrid.Items.Clear(); doesn't work
+            dataGrid.ItemsSource = null;
             dataGrid.ItemsSource = db.ReadAll();
         }
 

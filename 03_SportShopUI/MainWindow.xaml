@@ -10,7 +10,7 @@
     <DockPanel>
         
             
-        <ToolBar DockPanel.Dock="Top">
+        <ToolBar DockPanel.Dock="Top" FontSize="15" FontWeight="Bold">
             <Button Click="Button_click" Margin="5 0">
                 Load all Salles
             </Button>
