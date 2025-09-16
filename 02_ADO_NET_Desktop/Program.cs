@@ -14,10 +14,6 @@ namespace _02_ADO_NET_Desktop
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            //string connectionString = @"Data Source = MIAMI\SQLEXPRESS;   
-            //                            Initial Catalog = SportShop; 
-            //                            Integrated Security = True;
-            //                            TrustServerCertificate = True;";
             string connectionString = ConfigurationManager.ConnectionStrings["SportShopDBConnection"].ConnectionString;
             using (SalesDB items = new SalesDB(connectionString))
             {
