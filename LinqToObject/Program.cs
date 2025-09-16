@@ -101,7 +101,7 @@ namespace LinqToObject
             showItems(result);
             int positiveNumbers = ints.Count(i => i > 9 && i < 100);
             double avg = ints.Where(i => i > 9 && i < 100).Average();
-            printY($"Positive numbers from 10 to 99 are {positiveNumbers} and the Average of them is {avg}");
+            printY($"Positive numbers from 10 to 99 are '{positiveNumbers}' and the Average of them is {avg}");
             printDC("Дано колекцію цілих чисел. Знайти максимальне парне значення.");
             showItems(ints);
             int maxOfEven = ints.Where(i => i%2 == 0).Max();
@@ -128,7 +128,21 @@ namespace LinqToObject
             printY("origin collection");
             string[] groupCollectionOrigin = new string[] {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipisicing", "elit", "Quidem", "possimus", "suscipit",
                 "expedita", "repellendus", "veniam", "Quibusdam" };
-            IEnumerable <string> groupCollection = groupCollectionOrigin.GroupBy(i => i.Count());
+            showItems(groupCollectionOrigin);
+            IEnumerable<IGrouping<int,string>> groupCollection = groupCollectionOrigin.GroupBy(i => i.Length);
+            printY("Grouping");
+            printC("");
+            foreach(var item in groupCollection)
+            {
+                Console.Write(item.Key + " - ");
+                {
+                    foreach (var items in item)
+                    {
+                        Console.Write(items + " ");
+                    }
+                }
+                Console.WriteLine();
+            }
             reset();
             
         }
