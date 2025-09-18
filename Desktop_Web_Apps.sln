@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_data_access", "03_data_a
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToObject", "LinqToObject\LinqToObject.csproj", "{37552AE0-BCC3-459F-AA06-43A08C786DFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Music_Collection_DB", "04_Music_Collection_DB\04_Music_Collection_DB.csproj", "{58DF0347-CCBA-45FD-AE37-FEFEA989DADF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_DataAccess", "04_DataAccess\04_DataAccess.csproj", "{7BC91974-8732-47AC-87C5-3D5BED6C67DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{37552AE0-BCC3-459F-AA06-43A08C786DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37552AE0-BCC3-459F-AA06-43A08C786DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37552AE0-BCC3-459F-AA06-43A08C786DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58DF0347-CCBA-45FD-AE37-FEFEA989DADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58DF0347-CCBA-45FD-AE37-FEFEA989DADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58DF0347-CCBA-45FD-AE37-FEFEA989DADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58DF0347-CCBA-45FD-AE37-FEFEA989DADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC91974-8732-47AC-87C5-3D5BED6C67DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC91974-8732-47AC-87C5-3D5BED6C67DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC91974-8732-47AC-87C5-3D5BED6C67DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC91974-8732-47AC-87C5-3D5BED6C67DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
