@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Standard Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+
+# Ignore config files
+Library/app.config
+Library/appsettings.json
