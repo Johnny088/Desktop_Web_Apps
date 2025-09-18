@@ -373,5 +373,11 @@ obj/
 03_data_access/app.config
 03_data_access/appsettings.json
 
-04_DataAccess/app.config
-04_DataAccess/appsettings.json
+04_Music_Collection_DB/app.config
+04_Music_Collection_DB/appsettings.json
+
+02_ADO_NET_Desktop/app.config
+02_ADO_NET_Desktop/appsettings.json
+
+03_SportShopUI/app.config
+03_SportShopUI/appsettings.json
