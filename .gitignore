@@ -370,5 +370,8 @@ obj/
 *.suo
 
 # Ignore config files
-Library/app.config
-Library/appsettings.json
+03_data_access/app.config
+03_data_access/appsettings.json
+
+04_DataAccess/app.config
+04_DataAccess/appsettings.json
