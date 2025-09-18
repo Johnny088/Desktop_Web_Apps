@@ -27,7 +27,7 @@ namespace _02_ADO_NET_Desktop
                 items.reset();
             }
 
-            //using (SalesDB item2 = new SalesDB(connectionString))
+            //using (SalesDB item2 = new SalesDB(connectionString))  
             //{
             //    SallesItems itemTest = new SallesItems()
             //    {
