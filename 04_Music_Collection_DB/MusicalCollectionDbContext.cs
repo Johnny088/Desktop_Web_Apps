@@ -31,6 +31,12 @@ namespace _04_Music_Collection_DB
         //track
         //Playlist
         public DbSet<Band> Bands { get; set;}
+        public DbSet<Country> Countries { get; set;}
+        public DbSet<Albom> Alboms { get; set;}
+        public DbSet<Genre> Genres { get; set;}
+        public DbSet<Track> Tracks { get; set;}
+        public DbSet<PlayList> PlayLists { get; set;}
+        public DbSet<Category> Categories { get; set;}
     }
 }
 class Band
@@ -49,7 +55,7 @@ class Country
     public int Id { get; set; }
     public string Name { get; set; }
 
-    public ICollection<Country> Bands { get; set; }
+    public ICollection<Band> Bands { get; set; }
 }
 
 class Albom
@@ -61,6 +67,7 @@ class Albom
     public DateTime Year { get; set; }
     public Genre Genre { get; set; }
     public int GenreID { get; set; }
+    public ICollection<Track> Tracks { get; set; }
 
 }
 
