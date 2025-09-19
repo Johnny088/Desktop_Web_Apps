@@ -35,69 +35,8 @@ namespace _04_Music_Collection_DB
         public DbSet<Albom> Alboms { get; set;}
         public DbSet<Genre> Genres { get; set;}
         public DbSet<Track> Tracks { get; set;}
-        public DbSet<PlayList> PlayLists { get; set;}
+        public DbSet<Playlist> PlayLists { get; set;}
         public DbSet<Category> Categories { get; set;}
+        public DbSet<TrackPlaylist> TrackPlaylists { get; set;}
     }
-}
-class Band
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public Country Country { get; set; } // one Band to one Country
-    public int CountryID { get; set; }
-    public ICollection<Albom> Alboms { get; set; }
-
-
-}
-
-class Country
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-
-    public ICollection<Band> Bands { get; set; }
-}
-
-class Albom
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public Band Band { get; set; }
-    public int BandID { get; set; }
-    public DateTime Year { get; set; }
-    public Genre Genre { get; set; }
-    public int GenreID { get; set; }
-    public ICollection<Track> Tracks { get; set; }
-
-}
-
-class Genre
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public ICollection<Albom> Alboms { get; set; }
-}
-
-class Track
-{
-    public  int Id { get; set; }
-    public string Name { get; set; }
-    public Albom Albom { get; set; }
-    public int AlbomID { get; set; }
-    public TimeSpan Duration { get; set; }
-}
-
-class PlayList
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public Category Category { get; set; }
-    public int CategoryID { get; set; }
-
-}
-class Category
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public ICollection<PlayList> PlayLists { get; set; }
 }

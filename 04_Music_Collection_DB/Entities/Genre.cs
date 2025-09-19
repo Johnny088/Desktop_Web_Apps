@@ -1,0 +1,6 @@
+﻿class Genre
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public ICollection<Albom> Alboms { get; set; }
+}
