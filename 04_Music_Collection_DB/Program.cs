@@ -10,7 +10,9 @@ namespace _04_Music_Collection_DB
             MusicalCollectionDbContext context = new MusicalCollectionDbContext();
             
             context.Database.Migrate();           //the way to migrate database to sql
-
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("The data was migrated");
+            Console.ResetColor();
             //Add-Migration name        ====>         in the Manager console  is ThreadExceptionEventArgs second way to migrate data
         }
     }

@@ -19,7 +19,7 @@ namespace _04_Music_Collection_DB
         public MusicalCollectionDbContext()  // constructor
         {
             connectionString = ConfigurationManager.ConnectionStrings["MusicDBConnection"].ConnectionString; //getting path from App.config
-            //this.Database.EnsureCreated();      //creating the database if it doesn't exist
+            this.Database.EnsureCreated();      //creating the database if it doesn't exist
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) // we need it too connect to data base
@@ -33,7 +33,7 @@ namespace _04_Music_Collection_DB
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //base.OnModelCreating(modelBuilder);  // <====== we only need it when we use IdentityDbContext
+            base.OnModelCreating(modelBuilder);  // <====== we only need it when we use IdentityDbContext
 
             modelBuilder.Entity<TrackPlaylist>().HasKey(i => new { i.TrackID, i.PlaylistID }); // making composite key
 
@@ -162,7 +162,7 @@ namespace _04_Music_Collection_DB
             }); 
 
             //------------------------------------------------------------------------Albums----------------------------------------
-            modelBuilder.Entity<Genre>().HasData(new Album[]
+            modelBuilder.Entity<Album>().HasData(new Album[]
             {
                 new Album()
                 {
