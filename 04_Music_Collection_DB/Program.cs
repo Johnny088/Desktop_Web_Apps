@@ -13,7 +13,7 @@ namespace _04_Music_Collection_DB
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("The data was migrated");
             Console.ResetColor();
-            //Add-Migration name        ====>         in the Manager console  is ThreadExceptionEventArgs second way to migrate data
+            //Add-Migration name        ====>         in the Manager console  is The second way to migrate data
         }
     }
 }
