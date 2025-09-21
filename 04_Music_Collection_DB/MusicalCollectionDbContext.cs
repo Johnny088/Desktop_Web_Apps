@@ -159,7 +159,7 @@ namespace _04_Music_Collection_DB
                     Id = 6,
                     Name = "Hip Hop"
                 }
-            });
+            }); 
 
             //------------------------------------------------------------------------Albums----------------------------------------
             modelBuilder.Entity<Genre>().HasData(new Album[]
