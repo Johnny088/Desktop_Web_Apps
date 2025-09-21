@@ -1,9 +1,12 @@
-﻿class Track
+﻿using System.ComponentModel.DataAnnotations;
+
+class Track
 {
     public  int Id { get; set; }
+    [Required, MaxLength(100)]
     public string Name { get; set; }
-    public Albom Albom { get; set; }
-    public int AlbomID { get; set; }
+    public Album Album { get; set; }
+    public int AlbumID { get; set; }
     public TimeSpan Duration { get; set; }
     public ICollection<TrackPlaylist> TrackPlaylists { get; set; }
 }
