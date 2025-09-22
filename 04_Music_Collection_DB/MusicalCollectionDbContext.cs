@@ -19,7 +19,7 @@ namespace _04_Music_Collection_DB
         public MusicalCollectionDbContext()  // constructor
         {
             connectionString = ConfigurationManager.ConnectionStrings["MusicDBConnection"].ConnectionString; //getting path from App.config
-            this.Database.EnsureCreated();      //creating the database if it doesn't exist
+            //this.Database.EnsureCreated();      //creating the database if it doesn't exist
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) // we need it too connect to data base

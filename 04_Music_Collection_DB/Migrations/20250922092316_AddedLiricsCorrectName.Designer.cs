@@ -12,8 +12,8 @@ using _04_Music_Collection_DB;
 namespace _04_Music_Collection_DB.Migrations
 {
     [DbContext(typeof(MusicalCollectionDbContext))]
-    [Migration("20250921141354_Init")]
-    partial class Init
+    [Migration("20250922092316_AddedLiricsCorrectName")]
+    partial class AddedLiricsCorrectName
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,9 @@ namespace _04_Music_Collection_DB.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<double>("Rating")
+                        .HasColumnType("float");
+
                     b.Property<DateTime>("Year")
                         .HasColumnType("datetime2");
 
@@ -62,6 +65,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 1,
                             GenreID = 1,
                             Name = "Master of Puppets",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         },
                         new
@@ -70,6 +74,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 2,
                             GenreID = 2,
                             Name = "Californication",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         },
                         new
@@ -78,6 +83,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 3,
                             GenreID = 3,
                             Name = "Beautiful Trauma",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         },
                         new
@@ -86,6 +92,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 4,
                             GenreID = 3,
                             Name = "Bangerz",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         },
                         new
@@ -94,6 +101,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 5,
                             GenreID = 2,
                             Name = "Blurryface",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         },
                         new
@@ -102,6 +110,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 6,
                             GenreID = 5,
                             Name = "A Night at the Opera",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         },
                         new
@@ -110,6 +119,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 7,
                             GenreID = 6,
                             Name = "The Eminem Show",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         },
                         new
@@ -118,6 +128,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 8,
                             GenreID = 1,
                             Name = "Slippery When Wet",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         },
                         new
@@ -126,6 +137,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 9,
                             GenreID = 3,
                             Name = "Divide",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         },
                         new
@@ -134,6 +146,7 @@ namespace _04_Music_Collection_DB.Migrations
                             BandID = 10,
                             GenreID = 4,
                             Name = "Fireworks & Rollerblades",
+                            Rating = 0.0,
                             Year = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1980)
                         });
                 });
@@ -368,10 +381,20 @@ namespace _04_Music_Collection_DB.Migrations
                     b.Property<TimeSpan>("Duration")
                         .HasColumnType("time");
 
+                    b.Property<string>("Lyrics")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<long>("PlayCount")
+                        .HasColumnType("bigint");
+
+                    b.Property<double>("Rating")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -385,154 +408,198 @@ namespace _04_Music_Collection_DB.Migrations
                             Id = 1,
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 5, 13, 0),
-                            Name = "Battery"
+                            Name = "Battery",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 2,
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 8, 36, 0),
-                            Name = "Master of Puppets"
+                            Name = "Master of Puppets",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 3,
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 6, 27, 0),
-                            Name = "Welcome Home (Sanitarium)"
+                            Name = "Welcome Home (Sanitarium)",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 4,
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 8, 16, 0),
-                            Name = "Disposable Heroes"
+                            Name = "Disposable Heroes",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 5,
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 5, 39, 0),
-                            Name = "Leper Messiah"
+                            Name = "Leper Messiah",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 6,
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 8, 27, 0),
-                            Name = "Orion"
+                            Name = "Orion",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 7,
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 5, 32, 0),
-                            Name = "Damage, Inc."
+                            Name = "Damage, Inc.",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 8,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 58, 0),
-                            Name = "Around the World"
+                            Name = "Around the World",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 9,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 30, 0),
-                            Name = "Parallel Universe"
+                            Name = "Parallel Universe",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 10,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 37, 0),
-                            Name = "Scar Tissue"
+                            Name = "Scar Tissue",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 11,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 15, 0),
-                            Name = "Otherside"
+                            Name = "Otherside",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 12,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 18, 0),
-                            Name = "Get on Top"
+                            Name = "Get on Top",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 13,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 5, 20, 0),
-                            Name = "Californication"
+                            Name = "Californication",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 14,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 51, 0),
-                            Name = "Easily"
+                            Name = "Easily",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 15,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 2, 43, 0),
-                            Name = "Porcelain"
+                            Name = "Porcelain",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 16,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 0, 0),
-                            Name = "Emit Remus"
+                            Name = "Emit Remus",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 17,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 2, 37, 0),
-                            Name = "I Like Dirt"
+                            Name = "I Like Dirt",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 18,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 45, 0),
-                            Name = "This Velvet Glove"
+                            Name = "This Velvet Glove",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 19,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 52, 0),
-                            Name = "Savior"
+                            Name = "Savior",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 20,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 13, 0),
-                            Name = "Purple Stain"
+                            Name = "Purple Stain",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 21,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 1, 52, 0),
-                            Name = "Right on Time"
+                            Name = "Right on Time",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         },
                         new
                         {
                             Id = 22,
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 25, 0),
-                            Name = "Road Trippin"
+                            Name = "Road Trippin",
+                            PlayCount = 0L,
+                            Rating = 0.0
                         });
                 });
 

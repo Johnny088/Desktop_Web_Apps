@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _04_Music_Collection_DB;
 
@@ -11,9 +12,11 @@ using _04_Music_Collection_DB;
 namespace _04_Music_Collection_DB.Migrations
 {
     [DbContext(typeof(MusicalCollectionDbContext))]
-    partial class MusicalCollectionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250922090804_AddedRating")]
+    partial class AddedRating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -378,17 +381,10 @@ namespace _04_Music_Collection_DB.Migrations
                     b.Property<TimeSpan>("Duration")
                         .HasColumnType("time");
 
-                    b.Property<string>("Lyrics")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<long>("PlayCount")
-                        .HasColumnType("bigint");
 
                     b.Property<double>("Rating")
                         .HasColumnType("float");
@@ -406,7 +402,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 5, 13, 0),
                             Name = "Battery",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -415,7 +410,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 8, 36, 0),
                             Name = "Master of Puppets",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -424,7 +418,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 6, 27, 0),
                             Name = "Welcome Home (Sanitarium)",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -433,7 +426,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 8, 16, 0),
                             Name = "Disposable Heroes",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -442,7 +434,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 5, 39, 0),
                             Name = "Leper Messiah",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -451,7 +442,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 8, 27, 0),
                             Name = "Orion",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -460,7 +450,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 1,
                             Duration = new TimeSpan(0, 0, 5, 32, 0),
                             Name = "Damage, Inc.",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -469,7 +458,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 58, 0),
                             Name = "Around the World",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -478,7 +466,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 30, 0),
                             Name = "Parallel Universe",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -487,7 +474,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 37, 0),
                             Name = "Scar Tissue",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -496,7 +482,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 15, 0),
                             Name = "Otherside",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -505,7 +490,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 18, 0),
                             Name = "Get on Top",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -514,7 +498,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 5, 20, 0),
                             Name = "Californication",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -523,7 +506,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 51, 0),
                             Name = "Easily",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -532,7 +514,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 2, 43, 0),
                             Name = "Porcelain",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -541,7 +522,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 0, 0),
                             Name = "Emit Remus",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -550,7 +530,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 2, 37, 0),
                             Name = "I Like Dirt",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -559,7 +538,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 45, 0),
                             Name = "This Velvet Glove",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -568,7 +546,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 52, 0),
                             Name = "Savior",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -577,7 +554,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 4, 13, 0),
                             Name = "Purple Stain",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -586,7 +562,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 1, 52, 0),
                             Name = "Right on Time",
-                            PlayCount = 0L,
                             Rating = 0.0
                         },
                         new
@@ -595,7 +570,6 @@ namespace _04_Music_Collection_DB.Migrations
                             AlbumID = 2,
                             Duration = new TimeSpan(0, 0, 3, 25, 0),
                             Name = "Road Trippin",
-                            PlayCount = 0L,
                             Rating = 0.0
                         });
                 });

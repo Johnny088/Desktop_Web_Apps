@@ -9,4 +9,8 @@ class Track
     public int AlbumID { get; set; }
     public TimeSpan Duration { get; set; }
     public ICollection<TrackPlaylist> TrackPlaylists { get; set; }
+    public double Rating { get; set; }
+    public long PlayCount { get; set; }
+    [MaxLength(100)]
+    public string? Lyrics { get; set; }
 }

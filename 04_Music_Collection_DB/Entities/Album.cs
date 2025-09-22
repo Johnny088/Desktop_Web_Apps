@@ -11,5 +11,5 @@ class Album
     public Genre Genre { get; set; }
     public int GenreID { get; set; }
     public ICollection<Track> Tracks { get; set; }
-
+    public double Rating { get; set; }
 }
