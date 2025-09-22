@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Music_Collection_DB", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_DataAccess", "04_DataAccess\04_DataAccess.csproj", "{7BC91974-8732-47AC-87C5-3D5BED6C67DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopDB", "ShopDB\ShopDB.csproj", "{6E76D2CF-B44E-44C8-B04D-BC73405DA661}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{7BC91974-8732-47AC-87C5-3D5BED6C67DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BC91974-8732-47AC-87C5-3D5BED6C67DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BC91974-8732-47AC-87C5-3D5BED6C67DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E76D2CF-B44E-44C8-B04D-BC73405DA661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E76D2CF-B44E-44C8-B04D-BC73405DA661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E76D2CF-B44E-44C8-B04D-BC73405DA661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E76D2CF-B44E-44C8-B04D-BC73405DA661}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

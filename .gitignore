@@ -381,3 +381,6 @@ obj/
 
 03_SportShopUI/app.config
 03_SportShopUI/appsettings.json
+
+ShopDB/app.config
+ShopDB/appsettings.json
