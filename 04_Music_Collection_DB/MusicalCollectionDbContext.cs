@@ -13,7 +13,7 @@ namespace _04_Music_Collection_DB
 {
     // first we need to add a class by using "add new item"
     //we need to set up Entity Framework core and Entity Framework COre SqlServer
-    internal class MusicalCollectionDbContext :DbContext //to connect to DBContext class it responses for connecting to databases
+    internal class MusicalCollectionDbContext :DbContext //connect to DBContext class it responses for connecting to databases
     {
         public string connectionString { get; set; } //future path
         public MusicalCollectionDbContext()  // constructor
