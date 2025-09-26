@@ -40,7 +40,7 @@ namespace _05_Final_work
         public string Name { get; set; }
         public ICollection<Player> Players { get; set; }
         public Season Season { get; set; }
-        public ICollection<Aword> Awords { get; set; }              // if it is really need many to many?
+        public ICollection<Aword> Awords { get; set; }               // if it is really need many to many?
     }
 
     public class Season
