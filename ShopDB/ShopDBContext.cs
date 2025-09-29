@@ -75,8 +75,5 @@ namespace ShopDB
         DbSet<Shop> Shops { get; set; }
         DbSet<Worker> Workers { get; set; }
         DbSet<ProductShop> ProdustsShops { get; set; }
-
-
-        
     }
 }
