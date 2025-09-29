@@ -12,7 +12,7 @@ namespace _05_Final_work
 {
 
 
-     class OlympicsGamesDbContext: DbContext
+     public class OlympicsGamesDbContext: DbContext
     {
         public string connectionString { get; set; }
         public OlympicsGamesDbContext()
@@ -59,15 +59,16 @@ namespace _05_Final_work
             modelBuilder.SeedPlayer();
             modelBuilder.SeedAward();
         }
-        DbSet<CountryHost> CountryHosts { get; set; }
-        DbSet<CountryTeam> CountryTeams { get; set; }
-        DbSet<Season> Seasons { get; set; }
-        DbSet<Medal> Medals { get; set; }
-        DbSet<NameOfGame> NameOfGames { get; set; }
-        DbSet<Olympic> Olympics { get; set; }
-        DbSet<Player> Players { get; set; }
-        DbSet<Award> Awards { get; set; }
+        public DbSet<CountryHost> CountryHosts { get; set; }
+        public DbSet<CountryTeam> CountryTeams { get; set; }
+        public DbSet<Season> Seasons { get; set; }
+        public DbSet<Medal> Medals { get; set; }
+        public DbSet<NameOfGame> NameOfGames { get; set; }
+        public DbSet<Olympic> Olympics { get; set; }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<Award> Awards { get; set; }
 
     }
+
 
 }

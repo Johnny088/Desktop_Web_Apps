@@ -67,13 +67,13 @@ namespace ShopDB
            
         }
         
-        DbSet<Category> Category { get; set; }
-        DbSet<City> Cities { get; set; }
-        DbSet<Country> Countries { get; set; }
-        DbSet<Position> Positions { get; set; }
-        DbSet<Product> Products { get; set; }
-        DbSet<Shop> Shops { get; set; }
-        DbSet<Worker> Workers { get; set; }
-        DbSet<ProductShop> ProdustsShops { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Shop> Shops { get; set; }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<ProductShop> ProdustsShops { get; set; }
     }
 }
