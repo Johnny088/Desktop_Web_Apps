@@ -3,7 +3,6 @@
     public class Medal
     {
         public int Id { get; set; }
-        public int Place { get; set; }
         public string TypeOfMedal { get; set; }
         public ICollection<Award> Awards { get; set; }
 

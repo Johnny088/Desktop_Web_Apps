@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 
 namespace OlimpicsDbContextUI
 {
@@ -27,10 +28,14 @@ namespace OlimpicsDbContextUI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             datagrid.ItemsSource = context.Players.ToList();
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            var player = context.Players.Include(p => p.CountryTeam).Include(p => p.NameOfGame).Include(p => p.Awards).ThenInclude(a => a.Medal)
+                .Include(a => a.Awards).ThenInclude(a => a.Olympic);
+            datagrid.ItemsSource = player;
 
         }
     }

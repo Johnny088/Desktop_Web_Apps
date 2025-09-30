@@ -38,9 +38,9 @@ namespace _05_Final_work
             modelBuilder.Entity<Medal>().Property(m =>m.TypeOfMedal).IsRequired().HasMaxLength(100);
 
             //friendship.
-            modelBuilder.Entity<Award>().HasOne(a => a.Medal).WithMany(m => m.Awards).HasForeignKey(a =>a.MedalID);
-            modelBuilder.Entity<Award>().HasOne(a => a.Olympic).WithMany(o => o.Awards).HasForeignKey(a => a.OlympicID);
-            modelBuilder.Entity<Award>().HasOne(a => a.Player).WithMany(p => p.Awards).HasForeignKey(a => a.PlayerID);
+            modelBuilder.Entity<Award>().HasOne(a => a.Medal).WithMany(m => m.Awards).HasForeignKey(a =>a.MedalID);   // Award - Medal
+            modelBuilder.Entity<Award>().HasOne(a => a.Olympic).WithMany(o => o.Awards).HasForeignKey(a => a.OlympicID); // Award Olympic
+            modelBuilder.Entity<Award>().HasOne(a => a.Player).WithMany(p => p.Awards).HasForeignKey(a => a.PlayerID);   // Award - Player
 
             modelBuilder.Entity<CountryHost>().HasMany(c => c.Olympics).WithOne(o => o.CountryHost).HasForeignKey(o => o.CountyHostID);   // Country - Olympics
             modelBuilder.Entity<CountryTeam>().HasMany(c => c.Players).WithOne(p => p.CountryTeam).HasForeignKey(p => p.CountyTeamID);    //Country - Players

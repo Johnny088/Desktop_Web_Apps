@@ -1,4 +1,5 @@
 ﻿using _05_OlympicsDataAccess.Entities;
+using Microsoft.EntityFrameworkCore;
 namespace _05_Final_work
 {
     internal class Program
@@ -6,13 +7,13 @@ namespace _05_Final_work
         static void Main(string[] args)
         {
             OlympicsGamesDbContext context = new OlympicsGamesDbContext();
-            context.Seasons.Add(new Season()
+            var test = context.Players.Include(p => p.NameOfGameID).Include(p => p.CountryTeam);//.Include(p => p.Awards).ThenInclude(p => p.Medal)
+                //.Include(p => p.Awards).ThenInclude(p =>p.Olympic);
+            foreach(var item in test)
             {
-                Id = 13,
-                Type = "Test"
-            });
+                Console.WriteLine($"Name: {item.Name} Surname: {item.Surname}");
+            }
         }
     }
-    
 
 }

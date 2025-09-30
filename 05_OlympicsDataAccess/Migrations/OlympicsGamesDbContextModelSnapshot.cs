@@ -388,9 +388,6 @@ namespace _05_OlympicsDataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Place")
-                        .HasColumnType("int");
-
                     b.Property<string>("TypeOfMedal")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -404,19 +401,16 @@ namespace _05_OlympicsDataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Place = 0,
                             TypeOfMedal = "Gold"
                         },
                         new
                         {
                             Id = 2,
-                            Place = 0,
                             TypeOfMedal = "Silver"
                         },
                         new
                         {
                             Id = 3,
-                            Place = 0,
                             TypeOfMedal = "Bronze"
                         });
                 });

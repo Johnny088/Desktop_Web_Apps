@@ -45,7 +45,6 @@ namespace _05_OlympicsDataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Place = table.Column<int>(type: "int", nullable: false),
                     TypeOfMedal = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
@@ -194,12 +193,12 @@ namespace _05_OlympicsDataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "Medals",
-                columns: new[] { "Id", "Place", "TypeOfMedal" },
+                columns: new[] { "Id", "TypeOfMedal" },
                 values: new object[,]
                 {
-                    { 1, 0, "Gold" },
-                    { 2, 0, "Silver" },
-                    { 3, 0, "Bronze" }
+                    { 1, "Gold" },
+                    { 2, "Silver" },
+                    { 3, "Bronze" }
                 });
 
             migrationBuilder.InsertData(

@@ -12,7 +12,7 @@ using _05_Final_work;
 namespace _05_OlympicsDataAccess.Migrations
 {
     [DbContext(typeof(OlympicsGamesDbContext))]
-    [Migration("20250929043110_Init")]
+    [Migration("20250929124554_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -391,9 +391,6 @@ namespace _05_OlympicsDataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Place")
-                        .HasColumnType("int");
-
                     b.Property<string>("TypeOfMedal")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -407,19 +404,16 @@ namespace _05_OlympicsDataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Place = 0,
                             TypeOfMedal = "Gold"
                         },
                         new
                         {
                             Id = 2,
-                            Place = 0,
                             TypeOfMedal = "Silver"
                         },
                         new
                         {
                             Id = 3,
-                            Place = 0,
                             TypeOfMedal = "Bronze"
                         });
                 });
