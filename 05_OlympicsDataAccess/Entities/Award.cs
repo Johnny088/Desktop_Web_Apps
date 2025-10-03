@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace _05_OlympicsDataAccess.Entities
@@ -15,5 +16,9 @@ namespace _05_OlympicsDataAccess.Entities
         public int OlympicID { get; set; }
         public Player Player { get; set; }
         public int PlayerID { get; set; }
+        public override string ToString()
+        {
+            return $"{Medal}";
+        }
     }
 }
