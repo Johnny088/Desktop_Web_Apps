@@ -10,7 +10,7 @@ namespace _05_OlympicsDataAccess.Entities
         {
             return Name;
         }
-        
+
     }
     
 

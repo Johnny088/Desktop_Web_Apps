@@ -21,6 +21,7 @@
                 Insert new salles
             </Button>
             
+            
         </ToolBar>
         <DataGrid Name="dataGrid">
             <DataGrid.Background>

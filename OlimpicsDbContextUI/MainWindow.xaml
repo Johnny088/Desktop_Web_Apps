@@ -7,14 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
-    <ToolBar DockPanel.Dock="Top" FontSize="15" FontWeight="Bold">
-        <Button Click="Button_Click" Margin="5 0">
-            Players
-        </Button>
-        <Button Click="Button_Click_1" Margin="5 0">Click me</Button>
+        <ToolBar DockPanel.Dock="Top" FontSize="15" FontWeight="Bold">
+            <Button Click="Button_Click_1" Margin="5 0">All Awards of Japan Olimpic
+            </Button>
+            <Button Click="Button_Click_2" Margin="5 0">
+                winners
+            </Button>
+            <Button Click="Button_Click_3" Margin="5 0">
+                Top Country
+            </Button>
+            <Button Click="Button_Click_4" Margin="5 0">
+                Top gold awards Team
+            </Button>
+            <Button Click="Button_Click_5" Margin="5 0">
+                Top Rider
+            </Button>
+            <Button Click="Button_Click" Margin="5 0">
+                Players
+            </Button>
         
     </ToolBar>
-    <DataGrid Name="datagrid">
+    <DataGrid Name="datagrid" Background="Bisque">
 
     </DataGrid>
     </DockPanel>
